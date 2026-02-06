@@ -1,0 +1,148 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: #020817;
+  font-family: 'Orbitron', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #8fd3ff;
+}
+
+/* Neon detective background */
+.neon-bg {
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(circle at top, rgba(0,170,255,0.15), transparent 60%),
+    linear-gradient(120deg, #020817, #020817);
+  overflow: hidden;
+  z-index: 0;
+}
+
+.neon-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 48px,
+    rgba(0,170,255,0.05) 50px
+  );
+}
+
+/* Main panel */
+.container {
+  position: relative;
+  z-index: 1;
+  background: rgba(5, 20, 40, 0.9);
+  padding: 25px 35px;
+  border-radius: 12px;
+  box-shadow: 0 0 35px rgba(0,170,255,0.4);
+  text-align: center;
+}
+
+/* Title */
+.title {
+  letter-spacing: 4px;
+  margin-bottom: 10px;
+  color: #b8e7ff;
+  text-shadow:
+    0 0 10px #00aaff,
+    0 0 25px rgba(0,170,255,0.8);
+}
+
+/* Difficulty */
+.difficulty {
+  margin-bottom: 10px;
+}
+
+select {
+  background: #020817;
+  color: #8fd3ff;
+  border: 1px solid #00aaff;
+  padding: 6px;
+  font-family: 'Orbitron', sans-serif;
+}
+
+/* Timer */
+.timer {
+  margin: 10px 0;
+  font-size: 18px;
+  color: #7dd3ff;
+}
+
+/* Sudoku grid */
+#sudoku-grid {
+  display: grid;
+  grid-template-columns: repeat(9, 45px);
+  gap: 2px;
+  margin: 20px auto;
+}
+
+/* Cells */
+#sudoku-grid input {
+  width: 45px;
+  height: 45px;
+  text-align: center;
+  font-size: 18px;
+  background: #020817;
+  color: #e6f6ff;
+  border: 1px solid #0a4d70;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+/* Focus = detective spotlight */
+#sudoku-grid input:focus {
+  border-color: #00aaff;
+  box-shadow: 0 0 10px #00aaff;
+}
+
+/* Prefilled clues */
+#sudoku-grid input.prefilled {
+  background: #061a2f;
+  color: #7dd3ff;
+  font-weight: bold;
+}
+
+/* Error */
+#sudoku-grid input.error {
+  background: #2a0000;
+  box-shadow: inset 0 0 10px #ff4d4d;
+}
+
+/* Buttons */
+.buttons {
+  margin-top: 15px;
+}
+
+button {
+  background: transparent;
+  border: 2px solid #00aaff;
+  color: #8fd3ff;
+  padding: 8px 18px;
+  margin: 5px;
+  font-family: 'Orbitron', sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background: #00aaff;
+  color: #020817;
+  box-shadow: 0 0 15px #00aaff;
+}
+
+/* Message */
+.message {
+  margin-top: 15px;
+  font-size: 16px;
+  color: #b8e7ff;
+  text-shadow: 0 0 8px rgba(0,170,255,0.7);
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sudoku</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Neon detective background -->
+  <div class="neon-bg"></div>
+
+  <div class="container">
+    <h1 class="title">SHERLOCK SUDOKU</h1>
+
+    <div class="difficulty">
+      <label>Case Level:</label>
+      <select onchange="setDifficulty(this.value)">
+        <option value="easy">Simple Case</option>
+        <option value="medium">Challenging Case</option>
+        <option value="hard">Mastermind Case</option>
+      </select>
+    </div>
+
+    <div id="timer" class="timer">Time: 00:00</div>
+
+    <div id="sudoku-grid"></div>
+
+    <div class="buttons">
+      <button onclick="checkSolution()">Analyze Case</button>
+      <button onclick="newGame()">New Investigation</button>
+      <button id="show-solution">Peek Solution</button>
+    </div>
+
+    <p id="message" class="message"></p>
+  </div>
+
+  <audio id="winSound">
+    <source src="https://www.soundjay.com/misc/sounds/bell-ringing-05.mp3">
+  </audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
